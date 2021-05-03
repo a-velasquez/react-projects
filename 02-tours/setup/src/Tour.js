@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // destructuring the properties of the tour object being passed in
-const Tour = ({ id, image, info, price, name }) => {
+const Tour = ({ id, image, info, price, name, removeTour }) => {
   
   const [readMore, setReadMore] = useState(false)
 
@@ -19,7 +19,7 @@ const Tour = ({ id, image, info, price, name }) => {
           {/* since we are toggling pass setReadMore !readMore, essentialy the opposite of the current state of readMore */}
           <button onClick={() => setReadMore(!readMore)}>{readMore ? 'show less' : 'read more'}</button>
         </p>
-        <button className='delete-btn'>not interested</button>
+        <button className='delete-btn' onClick={() => removeTour(id)}>not interested</button>
       </footer>
     </article>
   )
