@@ -32,6 +32,7 @@ const Review = () => {
 
   const randomPerson = () => {
     let randomNumber = Math.floor(Math.random() * people.length);
+    // helps avoid repitition of previous number
     if (randomNumber === index) {
       randomNumber = index + 1;
     }
