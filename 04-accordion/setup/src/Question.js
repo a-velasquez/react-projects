@@ -8,9 +8,11 @@ const Question = ({ title, info }) => {
     <article className="question">
       <header>
         <h4>{title}</h4>
-        <button className="btn">btn</button>
+        <button className="btn" onClick={() => setShowInfo(!showInfo)}>
+          show
+        </button>
       </header>
-      <p>{info}</p>
+      {showInfo && <p>{info}</p>}
     </article>
   );
 };
