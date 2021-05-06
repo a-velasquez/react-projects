@@ -32,6 +32,9 @@ function App() {
     )
   }
 
+  const { company, dates, duties, title } = jobs[value]
+  console.log(jobs)
+
   return <h2>tabs project setup</h2>
 }
 
