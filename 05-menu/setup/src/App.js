@@ -7,7 +7,12 @@ function App() {
 
   const [menuItems, setMenuItems] = useState(items)
   const [categories, setCategories] = useState([])
-  console.log(items)
+  // const allCategories = new Set(items.map((item) => item.category))
+  // only returns the categories present in the data, but we also need an 'all' btn
+  
+
+  const allCategories = ['all', ...new Set(items.map((item) => item.category))]
+  console.log(allCategories)
 
   const filterItems = (category) => {
     const newItems = items.filter((item) => item.category === category)
@@ -22,7 +27,7 @@ function App() {
           <div className='underline'>
           </div>
         </div>
-        <Categories categories={categories}/>
+        <Categories filterItems={filterItems}/>
         <Menu items={menuItems}/>
       </section>
     </main>
