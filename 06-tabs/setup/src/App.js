@@ -35,7 +35,20 @@ function App() {
   const { company, dates, duties, title } = jobs[value]
   console.log(jobs)
 
-  return <h2>tabs project setup</h2>
+  return (
+    <section className='section'>
+      <div className='title'>
+        <h2>experience</h2>
+        <div className=''></div>
+      </div>
+      <div className='jobs-center'>
+        <article className='job-info'>
+          <h3>{title}</h3>
+          <h4>{company}</h4>
+        </article>
+      </div>
+    </section>
+  )
 }
 
 export default App
