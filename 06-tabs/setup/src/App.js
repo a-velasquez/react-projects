@@ -7,7 +7,7 @@ const url = 'https://course-api.com/react-tabs-project'
 function App() {
 
   const [loading, setLoading] = useState(true)
-  const [jobs, setJobs] = usetState([])
+  const [jobs, setJobs] = useState([])
   const [value, setValue] = useState(0)
   
   const fetchJobs = async () => {
@@ -15,6 +15,7 @@ function App() {
     const newJobs = await response.json()
     setJobs(newJobs)
     setLoading(false)
+    // console.log(newJobs)
   }
 
   useEffect(() => {
