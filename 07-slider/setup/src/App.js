@@ -8,6 +8,7 @@ function App() {
   const [people, setPeople] = useState(data)
   const [index, setIndex] = useState(0)
 
+  // set index of slide
   useEffect(() => {
     const lastIndex = people.length - 1
     if (index < 0) {
@@ -17,6 +18,27 @@ function App() {
       setIndex(0)
     }
   }, [index, people])
+
+  /* alternative method
+  would have to pass setIndex block to setIndex() as arg in 2nd useEffect let slider function to have autplay keep working
+  const nextSlide = () => {
+    setIndex((oldIndex) => {
+      let index = oldIndex + 1
+      if (index > people.length - 1) {
+        index = 0
+      }
+      return index
+    })
+  }
+  const prevSlide = () => {
+    setIndex((oldIndex) => {
+      let index = oldIndex - 1
+      if (index < 0) {
+        index = people.length - 1
+      }
+      return index
+    })
+  } */
 
   // autoplay slides
   useEffect(() => {
