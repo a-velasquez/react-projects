@@ -1,12 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
-import { FaQuoteRight } from 'react-icons/fa';
-import data from './data';
+import React, { useState, useEffect } from 'react'
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
+import { FaQuoteRight } from 'react-icons/fa'
+import data from './data'
 
 function App() {
   //state values
   const [people, setPeople] = useState(data)
   const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const lastIndex = people.length - 1
+    if (index < 0) {
+      setIndex(lastIndex)
+    }
+    if (index > lastIndex) {
+      setIndex(0)
+    }
+  }, [index, people])
 
   return (
     <section className='section'>
@@ -23,14 +33,14 @@ function App() {
 
           let position = 'nextSlide';
           if (personIndex === index) {
-            position = 'activeSlide';
+            position = 'activeSlide'
             console.log(position)
           }
           if (
             personIndex === index - 1 ||
             (index === 0 && personIndex === people.length - 1)
           ) {
-            position = 'lastSlide';
+            position = 'lastSlide'
           }
     
             return (
