@@ -10,7 +10,15 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('hello')
+    let amount = parseInt(count)
+    if (count <= 0) {
+      amount = 1
+    }
+    // set max <p> at 10, if greater sets amount to 10
+    if (count > 10) {
+      amount = 10
+    }
+    setText(data.slice(0, amount))
   }
   
   return (
