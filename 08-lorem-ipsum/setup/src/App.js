@@ -7,11 +7,16 @@ function App() {
     setCount(e.target.value)
     console.log(e.target.value)
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('hello')
+  }
   
   return (
     <section className='section-center'>
       <h3>Hipster Lorem Ipsum Generater</h3>
-      <form className='lorem-form'>
+      <form className='lorem-form' onSubmit={handleSubmit}>
         <label htmlFor='amount'>paragraphs:</label>
         <input
           type='number'
