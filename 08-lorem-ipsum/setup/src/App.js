@@ -20,7 +20,13 @@ function App() {
           value={count}
           onChange={handleChange}
         />
+        <button className='btn'>make lipsum</button>
       </form>
+      <article className='lorem-text'>
+        {text.map((item, index) => {
+          return <p key={index}>{item}</p>
+        })}
+      </article>
     </section>
   )
 }
