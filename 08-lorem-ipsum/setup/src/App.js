@@ -9,8 +9,20 @@ function App() {
   }
   
   return (
-  <h2>lorem ipsum project setup</h2>
-    )
+    <section className='section-center'>
+      <h3>Hipster Lorem Ipsum Generater</h3>
+      <form className='lorem-form'>
+        <label htmlFor='amount'>paragraphs:</label>
+        <input
+          type='number'
+          name='amount'
+          id='amount'
+          value={count}
+          onChange={handleChange}
+        />
+      </form>
+    </section>
+  )
 }
 
 export default App;
