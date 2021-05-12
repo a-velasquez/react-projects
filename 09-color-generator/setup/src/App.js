@@ -7,11 +7,22 @@ function App() {
   const [error, setError] = useState(false)
   const [list, setList] = useState([])
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    try {
+      let colors = new Values(color).all(10)
+      setList(colors)
+    } catch (error) {
+      setError(true)
+      console.log(error)
+    }
+  }
+
   return (
     <>
       <section className='container'>
         <h3>color generator</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type='text'
             value={color}
