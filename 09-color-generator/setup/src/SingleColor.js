@@ -8,8 +8,13 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
   // console.log(bgc)
 
   return (
-    <article>
-      
+    <article
+      className={`color ${index > 10 && 'color-light'}`}
+      style={{ backgroundColor: `rgb(${bgc})` }}
+    >
+      <p className='percent-value'>
+        {weight}
+      </p>
     </article>
   )
 }
