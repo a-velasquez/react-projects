@@ -35,6 +35,7 @@ function App() {
             submit
           </button>
         </form>
+        </section>
         <section className='colors'>
           {list.map((color, index) => {
             return (
@@ -47,7 +48,6 @@ function App() {
             )
           })}
         </section>
-      </section>
     </>
   )
 }
