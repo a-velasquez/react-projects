@@ -27,7 +27,7 @@ function App() {
             type='text'
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            placeholder='color'
+            placeholder='#f15025'
             // adds error .css class if error truthy
             className={`${error ? 'error' : null}`}
           />
