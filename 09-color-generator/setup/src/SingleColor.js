@@ -5,10 +5,7 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
   const [alert, setAlert] = useState(false)
   const bgc = rgb.join(',')
   const hex = `#${hexColor}`
-  console.log(hex)
-  console.log(bgc)
   // const bgc = rgb.toString())
-  // console.log(bgc)
 
   return (
     <article
