@@ -37,7 +37,8 @@ function App() {
         </form>
         </section>
         <section className='colors'>
-          {list.map((color, index) => {
+        {list.map((color, index) => {
+            {console.log(color, index)}
             return (
               <SingleColor
                 key={index}
