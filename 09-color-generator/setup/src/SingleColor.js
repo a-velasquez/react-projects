@@ -5,7 +5,15 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
   const [alert, setAlert] = useState(false)
   const bgc = rgb.join(',')
   const hex = `#${hexColor}`
-  // const bgc = rgb.toString())
+  // effectively the same as rgb.join(',')
+  // const bgc = rgb.toString()
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAlert(false)
+    }, 3000)
+    return () => clearTimeout
+  }, [alert])
 
   return (
     <article
