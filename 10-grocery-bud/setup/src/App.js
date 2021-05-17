@@ -25,7 +25,7 @@ function App() {
 
   return (
     <section className='section-center'>
-      <form className='grocery-form' onSubmit={() => {}}>
+      <form className='grocery-form' onSubmit={handleSubmit}>
         <h3>grocery bud</h3>
         <div className='form-control'>
           <input
@@ -40,6 +40,12 @@ function App() {
         </button>
         </div>
       </form>
+      <div className='grocery-container'>
+        <List />
+        <button className='clear-btn'>
+          clear
+        </button>
+      </div>
     </section>
   )
 }
