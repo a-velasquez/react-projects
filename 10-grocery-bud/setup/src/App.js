@@ -11,6 +11,24 @@ function App() {
   // set up alert as object
   const [alert, setAlert] = useState({show: false, msg: '', type: ''})
 
-  return <h2>grocery bud setup</h2>
+  return (
+    <section className='section-center'>
+      <form className='grocery-form' onSubmit={() => {}}>
+        <h3>grocery bud</h3>
+        <div className='form-control'>
+          <input
+          className='grocery'
+          placeholder='e.g. eggs'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        >
+        </input>
+        <button type='submit' className='submit-btn'> 
+            button 
+        </button>
+        </div>
+      </form>
+    </section>
+  )
 }
 export default App
