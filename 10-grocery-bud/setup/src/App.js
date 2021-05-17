@@ -24,7 +24,7 @@ function App() {
         >
         </input>
         <button type='submit' className='submit-btn'> 
-            button 
+            {isEditing ? 'edit' : 'add'}
         </button>
         </div>
       </form>
