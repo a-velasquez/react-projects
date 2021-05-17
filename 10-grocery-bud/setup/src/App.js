@@ -9,7 +9,19 @@ function App() {
   // id of item being edited
   const [editID, setEditID] = useState(null)
   // set up alert as object
-  const [alert, setAlert] = useState({show: false, msg: '', type: ''})
+  const [alert, setAlert] = useState({ show: false, msg: '', type: '' })
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!name) {
+      // showAlert
+    } else if (name && isEditing) {
+      // setList 
+    } else {
+      // showAlert 'success'
+      // setList
+    }
+  }
 
   return (
     <section className='section-center'>
