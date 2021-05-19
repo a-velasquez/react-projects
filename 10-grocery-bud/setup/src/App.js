@@ -14,7 +14,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!name) {
-      // showAlert
+      setAlert({show: true, msg: 'please enter a value', type: 'danger'})
     } else if (name && isEditing) {
       // setList 
     } else {
