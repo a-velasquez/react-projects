@@ -18,8 +18,11 @@ function App() {
     } else if (name && isEditing) {
       // setList 
     } else {
-      // showAlert 'success'
-      // setList
+      // sets id to time created in milliseconds and .toString
+      const newItem = { id: new Date().getTime().toString(), title: name }
+      console.log(newItem)
+      setList([...list, newItem])
+      setName('')
     }
   }
 
