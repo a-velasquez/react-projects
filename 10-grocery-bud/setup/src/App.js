@@ -19,6 +19,7 @@ function App() {
       // setList 
     } else {
       // sets id to time created in milliseconds and .toString
+      showAlert(true, 'success', 'item add to list')
       const newItem = { id: new Date().getTime().toString(), title: name }
       console.log(newItem)
       setList([...list, newItem])
