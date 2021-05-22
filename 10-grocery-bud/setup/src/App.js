@@ -18,7 +18,6 @@ function App() {
     } else if (name && isEditing) {
       // setList 
     } else {
-      // sets id to time created in milliseconds and .toString
       showAlert(true, 'success', 'item add to list')
       const newItem = { id: new Date().getTime().toString(), title: name }
       console.log(newItem)
@@ -29,6 +28,11 @@ function App() {
 
   const showAlert = (show = false, type = '', msg = '') => {
     setAlert({ show, type, msg })
+  }
+
+  const clearList = () => {
+    showAlert(true, 'danger', 'list is cleared')
+    setList([])
   }
 
   return (
@@ -52,7 +56,7 @@ function App() {
       {list.length > 0 && (
         <div className='grocery-container'>
           <List items={list}/>
-          <button className='clear-btn'>
+          <button className='clear-btn' onClick={clearList}>
             clear
           </button>
         </div>
