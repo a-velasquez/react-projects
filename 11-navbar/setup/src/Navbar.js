@@ -30,6 +30,18 @@ const Navbar = () => {
           </ul>
         </div>
         <ul className='social-icons'>
+          <li>
+            <a href='https://www.twitter.com' />
+            <FaTwitter/>
+          </li>
+          <li>
+            <a href='https://www.twitter.com' />
+            <FaTwitter/>
+          </li>
+          <li>
+            <a href='https://www.twitter.com' />
+            <FaTwitter/>
+          </li>
         </ul>
       </div>
     </nav>
