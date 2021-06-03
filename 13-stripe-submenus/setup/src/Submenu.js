@@ -7,6 +7,7 @@ const Submenu = () => {
 		location,
 		page: {page, links}
 	} = useGlobalContext()
+
 	const container = useRef(null)
 
 	useEffect(() => {
@@ -23,8 +24,18 @@ const Submenu = () => {
 			ref={container}
 		>
 			<section>
-				<h4>section title</h4>
-				<div className='submenu-center'>links</div>
+				<h4>{page}</h4>
+				<div className={`submenu-center col-2`}>
+					{links.map((link, index) => {
+						const {label, icon, url} = link
+						return (
+							<a key={index} href={url}>
+								{icon}
+								{label}
+							</a>
+						)
+					})}
+				</div>
 			</section>
 		</aside>
 	)
