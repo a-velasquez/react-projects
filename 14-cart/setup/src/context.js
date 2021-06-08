@@ -20,6 +20,11 @@ const AppProvider = ({children}) => {
 		// action being dipatched to provider
 		dispatch({type: 'CLEAR_CART'})
 	}
+
+	const removeItem = () => {
+		dispatch({type: 'REMOVE', payload: id})
+	}
+
 	return (
 		<AppContext.Provider
 			value={{
