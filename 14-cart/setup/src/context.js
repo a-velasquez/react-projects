@@ -14,7 +14,7 @@ const intialState = {
 }
 
 const AppProvider = ({children}) => {
-	const [cart, setCart] = useState(cartItems)
+	const [state, dispatch] = useReducer(reducer, intialState)
 
 	return (
 		<AppContext.Provider
