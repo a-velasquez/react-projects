@@ -10,11 +10,29 @@ const AppProvider = ({children}) => {
 	const [cocktails, setCockTails] = useState([])
 
 	const fetchDrinks = async () => {
-		setLoading()
+		setLoading(true)
 		try {
 			const response = await fetch(`${url}${searchTerm}`)
 			const data = await response.json()
-			console.log(data)
+			const {drinks} = data
+			if (drinks) {
+				const newCocktails = drinks.map((drink) => {
+					const {idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass} =
+						drink
+					return {
+						id: idDrink,
+						name: strDrink,
+						image: strDrinkThumb,
+						info: strAlcoholic,
+						glass: strGlass
+					}
+				})
+				setCockTails(newCocktails)
+				console.log(newCocktails)
+			} else {
+				setCockTails([])
+			}
+			setLoading(false)
 		} catch (error) {
 			console.log(error)
 		}
