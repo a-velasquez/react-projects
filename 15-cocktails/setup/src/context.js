@@ -28,7 +28,6 @@ const AppProvider = ({children}) => {
 					}
 				})
 				setCockTails(newCocktails)
-				console.log(newCocktails)
 			} else {
 				setCockTails([])
 			}
